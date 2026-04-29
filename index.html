@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-grid" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero-copy">
+      <div class="hero-kicker">
+        <img class="hero-flag" src="images/pakistan-flag.avif" alt="Pakistan flag" />
+        <p class="eyebrow">Image Gallery of Pakistan</p>
+      </div>
+      <h1>Pakistan Through The Lens</h1>
+      <p class="subtitle">A responsive image gallery inspired by Pakistan's mountains, cities, wildlife, routes, and food with smooth transitions and lightbox navigation.</p>
+    
+      <div class="hero-status" aria-live="polite">
+        <span id="activeCategory">Category: All</span>
+        <span id="visibleCount">Images: 0</span>
+        <span id="searchState">Search: All</span>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orb hero-orb-one"></div>
+      <div class="hero-orb hero-orb-two"></div>
+      <div class="hero-orb hero-orb-three"></div>
+
+      <div class="hero-frame">
+        <span class="frame-label">Pakistan Gallery</span>
+        <div class="frame-line frame-line-one"></div>
+        <div class="frame-line frame-line-two"></div>
+        <div class="frame-line frame-line-three"></div>
+      </div>
+
+      <div class="hero-features">
+        <article class="feature-line">
+          <span class="feature-icon">01</span>
+          <div>
+            <strong>Landscapes of Pakistan</strong>
+            <p>From northern peaks to quiet valleys and open scenic roads.</p>
+          </div>
+        </article>
+        <article class="feature-line">
+          <span class="feature-icon">02</span>
+          <div>
+            <strong>Life in Motion</strong>
+            <p>A glimpse of cities, travel routes, and everyday local scenes.</p>
+          </div>
+        </article>
+        <article class="feature-line">
+          <span class="feature-icon">03</span>
+          <div>
+            <strong>Local Identity</strong>
+            <p>Wildlife, food, and places that reflect the spirit of the country.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls-panel" aria-label="Gallery controls">
+      <div class="panel-copy">
+        <p class="section-label">Explore Collection</p>
+        <h2>Explore Pakistan</h2>
+      </div>
+
+      <div class="search-wrap">
+        <label for="searchInput" class="search-label">Search by place, dish, animal, or destination</label>
+        <input type="search" id="searchInput" placeholder="Try Hunza, Islamabad, Markhor, Biryani..." />
+      </div>
+
+      <section class="filters" aria-label="Image categories">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="city">City</button>
+        <button class="filter-btn" data-filter="animals">Animals</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+        <button class="filter-btn" data-filter="food">Food</button>
+      </section>
+    </section>
+
+    <section class="gallery" id="galleryGrid" aria-label="Image gallery"></section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Expanded image view">
+    <button class="lightbox-close" id="closeLightbox" aria-label="Close image view">Close</button>
+    <button class="lightbox-nav prev" id="prevBtn" aria-label="Previous image">Prev</button>
+
+    <figure class="lightbox-content">
+      <img id="lightboxImage" src="" alt="Expanded view" />
+      <figcaption>
+        <span id="lightboxCounter"></span>
+        <p id="lightboxCaption"></p>
+      </figcaption>
+    </figure>
+
+    <button class="lightbox-nav next" id="nextBtn" aria-label="Next image">Next</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
